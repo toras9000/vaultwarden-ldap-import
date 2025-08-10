@@ -1,0 +1,62 @@
+﻿{
+  "Operation":
+  {
+    "StartupWaitSeconds": 60,
+    "IntervalMinutes": 60
+  },
+  "Ldap":
+  {
+    "Server":
+    {
+      "Host": "",
+      "Port": 389,
+      "Secure": false,
+      "ProtocolVersion": 3
+    },
+    "Credential":
+    {
+      "Username": "user",
+      "Passward": "pass"
+    },
+    "Directory":
+    {
+      "BaseDn": "ou=persons,ou=accounts,dc=myserver,o=home",
+      "Subtree": true,
+      "Filter": "(&(objectClass=aaa)(memberOf=xxxx)(!(olcDelete=TRUE)))",
+      "Attributes":
+      {
+        "ID": "uid",
+        "Mail": "email"
+      }
+    },
+    "Mailaddr":
+    {
+      "AcceptPatterns":
+      [
+        "@example\\.com$"
+      ]
+    }
+  },
+  "Vaultwarden":
+  {
+    "Server":
+    {
+      "Url": ""
+    },
+    "Options":
+    {
+      "OverwriteExisting": false
+    },
+    "Organization":
+    {
+      "OrgId": "organization-id",
+      "ClientId": "org-api-client-id",
+      "ClientSecret": "org-api-client-secret"
+    },
+    "Client":
+    {
+      "DeviceName": "vaultwarden-ldap-import",
+      "DeviceIdentifier": "vaultwarden-ldap-import"
+    }
+  }
+}
