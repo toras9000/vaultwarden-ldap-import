@@ -16,13 +16,13 @@
     "Credential":
     {
       "Username": "user",
-      "Passward": "pass"
+      "Password": "pass"
     },
     "Directory":
     {
       "BaseDn": "ou=persons,ou=accounts,dc=myserver,o=home",
       "Subtree": true,
-      "Filter": "(&(objectClass=aaa)(memberOf=xxxx)(!(olcDelete=TRUE)))",
+      "Filter": "(&(objectClass=aaa)(memberOf=xxxx)(!(olcDisabled=TRUE)))",
       "Attributes":
       {
         "ID": "uid",
