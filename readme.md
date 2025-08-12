@@ -9,7 +9,8 @@ This tool operates according to the settings defined in the [configuration file]
 At regular intervals, it retrieves user information from LDAP and imports the relevant users into Vaultwarden via the API.  
 Only one set of retrieval conditions and one target organization can be specified.  
 Post-import behavior within Vaultwarden depends on the API specifications.  
-For example, if SMTP is enabled, an invitation email will be sent to the email addresses of imported users.
+For example, if SMTP is enabled, an invitation email will be sent to the email addresses of imported users.  
+This tool does not remove users. Even if a user can no longer be found in the LDAP search results, any Vaultwarden user that has been imported will remain unchanged.  
 
 ## Running the Tool
 
